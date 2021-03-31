@@ -5,8 +5,6 @@ import { CreateSpecificationController } from "../modules/cars/useCases/createSp
 const specificationsRoutes = Router();
 
 const createSpecificationController = new CreateSpecificationController();
-specificationsRoutes.post("/", (request, response) => {
-    return createSpecificationController.handle(request, response);
-});
+specificationsRoutes.post("/", createSpecificationController.handle);
 
 export { specificationsRoutes };
