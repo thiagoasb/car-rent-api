@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @types/nodemailer -D
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add handlebars
 
 PATH: 
   C:\Python39\Scripts\;C:\Python39\;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Java\jdk1.8.0_151\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\opencv\build\x64\vc15\bin;;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\Thiago Bezerra\AppData\Local\Microsoft\WindowsApps;;C:\Users\Thiago Bezerra\AppData\Roaming\npm;C:\Users\Thiago Bezerra\AppData\Local\Yarn\bin;C:\Users\Thiago Bezerra\AppData\Local\Programs\Microsoft VS Code\bin
@@ -43,7 +43,7 @@ npm manifest:
       "dev": "ts-node-dev -r tsconfig-paths/register --poll --inspect=0.0.0.0:9229 --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
       "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli",
       "test": "cross-env NODE_ENV=test jest --runInBand --detectOpenHandles",
-      "seed:admin": "ts-node-dev src/shared/infra/typeorm/seed/admin.ts"
+      "seed:admin": "ts-node-dev -r tsconfig-paths/register src/shared/infra/typeorm/seed/admin.ts"
     },
     "devDependencies": {
       "@types/bcryptjs": "^2.4.2",
@@ -51,6 +51,7 @@ npm manifest:
       "@types/jest": "^26.0.23",
       "@types/jsonwebtoken": "^8.5.1",
       "@types/multer": "^1.4.5",
+      "@types/nodemailer": "^6.4.2",
       "@types/supertest": "^2.0.11",
       "@types/swagger-ui-express": "^4.1.2",
       "@types/uuid": "^8.3.0",
@@ -767,6 +768,13 @@ Lockfile:
     version "14.14.35"
     resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.35.tgz#42c953a4e2b18ab931f72477e7012172f4ffa313"
     integrity sha512-Lt+wj8NVPx0zUmUwumiVXapmaLUcAk3yPuHCFVXras9k5VT9TdhJqKqGVUQCD60OTMCl0qxJ57OiTL0Mic3Iag==
+  
+  "@types/nodemailer@^6.4.2":
+    version "6.4.2"
+    resolved "https://registry.yarnpkg.com/@types/nodemailer/-/nodemailer-6.4.2.tgz#d8ee254c969e6ad83fb9a0a0df3a817406a3fa3b"
+    integrity sha512-yhsqg5Xbr8aWdwjFS3QjkniW5/tLpWXtOYQcJdo9qE3DolBxsKzgRCQrteaMY0hos8MklJNSEsMqDpZynGzMNg==
+    dependencies:
+      "@types/node" "*"
   
   "@types/normalize-package-data@^2.4.0":
     version "2.4.0"
